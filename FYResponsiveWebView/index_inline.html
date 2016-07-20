@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Temp</title>
+	<style>
+		.active{background:#f3f3f3; border: solid 1px #ececec !important;}
+	</style>
+</head>
+
+<body>
+	<div class="wrapper" style="width:400px; margin:0 auto">
+		<!--Refer from this div-->
+		<div style="border: solid 1px #D8D8D8; padding:10px; border-left:9px solid #FCAE44; color:#9E9E9E; font-size: 14px; font-family: Lucida Sans Unicode;">
+			<h3 style="color:#6D6D6D; font-weight:normal; margin:0 0 5px 0; font-size: 19px;">Project Review Meeting</h3>
+			<span style="color:#BEC1C1">Fron: George Nobal</span> <i style="font-style:normal; float:right">Mon 23 Jun at 11.30</i>
+			<div style="margin-top:5px">PWC Room 656, Almaden Blvd, San Jose, Downtown.</div>
+			<ul class="cal_events" style="margin:15px 0 0 0; padding:0">
+				<li style="display:inline-block; width: 32%; list-style:none"><a href="#decline" id="decline" style="color:#FF6C6C; padding: 2px 10px 2px 10px !important; text-decoration:none; text-transform:uppercase; font-size:19px; padding: 2px 10px; border:solid 1px #fff">Decline</a></li>
+				<li style="display:inline-block; width: 32%; list-style:none"><a href="#maybe" id="maybe" style="color:#D0D0D0; text-decoration:none; text-transform:uppercase; font-size:19px; padding: 2px 10px; border:solid 1px #fff">Maybe</a></li>
+				<li style="display:inline-block; width: 32%; list-style:none"><a href="#accept" id="accept" style="color:#9CDC7C; text-decoration:none; text-transform:uppercase; font-size:19px; padding: 2px 10px; border:solid 1px #fff">Accept</a></li>
+			</ul>
+		</div>
+		<!--till here-->
+	</div>
+</body>
+<!-- jQuery library -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.js"></script>
+<script type="text/javascript">
+	$('.cal_events li a').click(function() {
+		$('.cal_events li a').removeClass("active");
+		$(this).addClass("active");
+	});
+</script>
+</html>

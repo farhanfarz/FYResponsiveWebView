@@ -1,25 +1,78 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="MHh-v6-nXG">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Navigation Controller-->
+        <scene sceneID="8NB-qi-Y8o">
+            <objects>
+                <navigationController id="MHh-v6-nXG" sceneMemberID="viewController">
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="WK4-0r-8cE">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="2Yr-oH-xHP"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HVD-pE-EqO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-195" y="306"/>
+        </scene>
+        <!--ResponsiveWebView-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="UBT-66-O6u">
+                                <rect key="frame" x="0.0" y="252" width="320" height="252"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X4G-XJ-RjV">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="253"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="deviceRGB"/>
+                                <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="X5B-10-HcY"/>
+                                </connections>
+                            </webView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="X4G-XJ-RjV" secondAttribute="trailing" id="3gA-ht-Shu"/>
+                            <constraint firstItem="UBT-66-O6u" firstAttribute="top" secondItem="X4G-XJ-RjV" secondAttribute="bottom" constant="-1" id="Khm-Md-i6E"/>
+                            <constraint firstItem="X4G-XJ-RjV" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Kt7-3E-pEf"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="UBT-66-O6u" secondAttribute="bottom" id="a0O-aJ-Rr3"/>
+                            <constraint firstAttribute="trailing" secondItem="UBT-66-O6u" secondAttribute="trailing" id="dpY-dX-0Vz"/>
+                            <constraint firstItem="X4G-XJ-RjV" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="gde-Ud-rv7"/>
+                            <constraint firstItem="UBT-66-O6u" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="kiM-BG-sdM"/>
+                            <constraint firstItem="UBT-66-O6u" firstAttribute="height" secondItem="X4G-XJ-RjV" secondAttribute="height" id="l9S-l6-RNN"/>
+                        </constraints>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
+                    <navigationItem key="navigationItem" title="ResponsiveWebView" id="G21-Ua-3gk"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="textView" destination="UBT-66-O6u" id="9lg-Q1-MMz"/>
+                        <outlet property="webView" destination="X4G-XJ-RjV" id="4AA-aZ-aZ1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="251" y="306"/>
         </scene>
     </scenes>
 </document>
